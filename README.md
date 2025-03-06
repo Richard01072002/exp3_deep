@@ -24,27 +24,17 @@ import numpy as np
 import matplotlib.pyplot as plt  # For plotting
 %matplotlib inline  
 ```
-#### output 1
-<img width="166" alt="Screenshot 2025-02-27 at 2 11 30 PM" src="https://github.com/user-attachments/assets/261eb803-aed0-4f74-ae1d-58876bdf8b0b" />
-
 
 
 ```
 X = torch.linspace(1,50,50).reshape(-1,1)
 ```
-#### output 2
-<img width="212" alt="Screenshot 2025-02-27 at 2 12 21 PM" src="https://github.com/user-attachments/assets/08373bfa-0076-459e-aab3-300593d333b3" />
-
-
 
 
 ```
 torch.manual_seed(71) # to obtain reproducible results
 e = torch.randint(-8,9,(50,1),dtype=torch.float)
 ```
-#### output 3
-<img width="162" alt="Screenshot 2025-02-27 at 2 12 42 PM" src="https://github.com/user-attachments/assets/ca65f180-7bf3-4074-9aca-4c4b774096de" />
-
 
 
 
@@ -53,7 +43,8 @@ y=2*X+1+e
 print(y.shape)
 ```
 #### output 4
-<img width="146" alt="Screenshot 2025-02-27 at 2 13 03 PM" src="https://github.com/user-attachments/assets/9182e13a-0633-42bc-a0aa-f27f39befca9" />
+<img width="241" alt="Screenshot 2025-03-06 at 2 47 07 PM" src="https://github.com/user-attachments/assets/46509fd2-abad-46e5-85c7-9757fd1cea9c" />
+
 
 
 ```
@@ -64,7 +55,7 @@ plt.title('Generated Data for Linear Regression')
 plt.show()
 ```
 #### output 5
-<img width="218" alt="Screenshot 2025-02-27 at 2 13 34 PM" src="https://github.com/user-attachments/assets/844f8e43-b111-407b-be3f-a0f7ad634a73" />
+<img width="575" alt="Screenshot 2025-03-06 at 2 47 55 PM" src="https://github.com/user-attachments/assets/260e0b30-61d1-450a-b210-aeb2b3311c7c" />
 
 
 ```
@@ -81,9 +72,6 @@ class Model(nn.Module):
         y_pred = self.linear(x)
         return y_pred
 ```
-#### output 6
-<img width="172" alt="Screenshot 2025-02-27 at 2 13 57 PM" src="https://github.com/user-attachments/assets/385dc7aa-58fe-4580-b3e4-3997b695ee84" />
-
 
 ```
 # Creating an instance of the model
@@ -93,7 +81,7 @@ print('Weight:', model.linear.weight.item())
 print('Bias:  ', model.linear.bias.item())
 ```
 #### output 7
-<img width="421" alt="Screenshot 2025-02-27 at 2 14 35 PM" src="https://github.com/user-attachments/assets/bd88cfdc-8472-46cc-b664-9174468ab333" />
+<img width="292" alt="Screenshot 2025-03-06 at 2 48 21 PM" src="https://github.com/user-attachments/assets/791d9cd8-678f-481b-9060-29989ba741a7" />
 
 
 ```
@@ -102,8 +90,6 @@ loss_function = nn.MSELoss()  # Mean Squared Error (MSE) loss
 optimizer = torch.optim.SGD(model.parameters(), lr=0.001)  # Stochastic Gradient Descent
 
 ```
-#### output 8
-<img width="290" alt="Screenshot 2025-02-27 at 2 15 23 PM" src="https://github.com/user-attachments/assets/b5ca9f3c-6fd7-4dba-b284-b37c46000aa9" />
 
 
 
@@ -127,8 +113,7 @@ for epoch in range(1, epochs + 1):  # Start from 1 to 50
 
 ```
 #### output 9
-<img width="288" alt="Screenshot 2025-02-27 at 2 15 49 PM" src="https://github.com/user-attachments/assets/fb05a1a2-75ac-44b5-8009-85eab3a1b69d" />
-
+<img width="586" alt="Screenshot 2025-03-06 at 2 48 56 PM" src="https://github.com/user-attachments/assets/f4e3a372-a523-4933-b0e3-958b6f47cfc1" />
 
 
 ```
