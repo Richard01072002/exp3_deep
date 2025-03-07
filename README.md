@@ -5,6 +5,7 @@
 ## AIM
 #### To train a linear regression model using PyTorch to learn the relationship y = 2X + 1 + noise and optimize it using MSE loss and SGD, then evaluate its performance by plotting the best-fit line.
 
+#### PROCEDURE
 #### Step 1: Data Preparation: A dataset was generated using X = torch.linspace(1,50,50).reshape(-1,1), with random noise e added to create the target variable y = 2X + 1 + e. The data was visualized using a scatter plot.
 
 #### Step 2: Model Definition: A simple linear regression model was defined using nn.Linear() with one input and one output feature. The model's weight and bias were initialized randomly.
@@ -13,7 +14,7 @@
 
 #### Step 4: Evaluation and Visualization: After training, the model parameters were extracted. The final weight was approximately 2.0, and the bias was approximately 1.0, closely matching the expected values. A best-fit line was plotted over the original data, demonstrating the model’s ability to generalize the relationship y = 2X + 1 effectively.
 
-## program
+## PROGRAM
 ```
 iimport torch
 import torch.nn as nn  # Neural network module
@@ -167,6 +168,6 @@ plt.show()
 
 
 
-### Result 
+### RESULT 
 #### The trained model successfully approximated the linear relationship with Final Weight ≈ 2.0 and Final Bias ≈ 1.0. The loss reduced over epochs, and the best-fit line closely followed the original data distribution, confirming successful training.
 
