@@ -5,7 +5,7 @@
 ## AIM
 #### To train a linear regression model using PyTorch to learn the relationship y = 2X + 1 + noise and optimize it using MSE loss and SGD, then evaluate its performance by plotting the best-fit line.
 
-#### PROCEDURE
+## PROCEDURE
 #### Step 1: Data Preparation: A dataset was generated using X = torch.linspace(1,50,50).reshape(-1,1), with random noise e added to create the target variable y = 2X + 1 + e. The data was visualized using a scatter plot.
 
 #### Step 2: Model Definition: A simple linear regression model was defined using nn.Linear() with one input and one output feature. The model's weight and bias were initialized randomly.
