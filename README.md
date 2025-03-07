@@ -3,17 +3,15 @@
 ### reg no. - 212222233005
 ### dep - AI & DS 
 ## AIM
-#### To understand and demonstrate the conversion of NumPy arrays into PyTorch tensors and explore various ways to create tensors in PyTorch.
-## procedure 
-#### Step 1: Install OpenCV
-#### Step 2: Check PyTorch Version
-#### Step 3: Create a NumPy array and print its type and data type.
-#### Step 4: Create a 2D NumPy array and reshape it and Convert it to a PyTorch tensor and print the results.
-#### Step 5: Modify the original NumPy array and observe changes in the tensor when using torch.from_numpy().
-#### Step 6: Create PyTorch Tensors Using Different Methods:
-#### Step 7: Use torch.Tensor(data) to create a tensor. Use torch.tensor(data) to create a tensor with the default type.
-#### Step 8: Create an uninitialized tensor with torch.empty().Create a zero tensor using torch.zeros().
-#### Step 9: Generate a tensor with evenly spaced values using torch.arange().Create a tensor using torch.linspace() for equally spaced values.
+#### To train a linear regression model using PyTorch to learn the relationship y = 2X + 1 + noise and optimize it using MSE loss and SGD, then evaluate its performance by plotting the best-fit line.
+
+#### Step 1: Data Preparation: A dataset was generated using X = torch.linspace(1,50,50).reshape(-1,1), with random noise e added to create the target variable y = 2X + 1 + e. The data was visualized using a scatter plot.
+
+#### Step 2: Model Definition: A simple linear regression model was defined using nn.Linear() with one input and one output feature. The model's weight and bias were initialized randomly.
+
+#### Step 3: Training Process: The model was trained using Mean Squared Error (MSE) as the loss function and Stochastic Gradient Descent (SGD) as the optimizer with a learning rate of 0.001. Training was performed over 50 epochs, with weight and bias values updated iteratively. The loss decreased steadily, showing that the model was learning.
+
+#### Step 4: Evaluation and Visualization: After training, the model parameters were extracted. The final weight was approximately 2.0, and the bias was approximately 1.0, closely matching the expected values. A best-fit line was plotted over the original data, demonstrating the model’s ability to generalize the relationship y = 2X + 1 effectively.
 
 ## program
 ```
@@ -42,7 +40,7 @@ e = torch.randint(-8,9,(50,1),dtype=torch.float)
 y=2*X+1+e
 print(y.shape)
 ```
-#### output 4
+#### output 1
 <img width="241" alt="Screenshot 2025-03-06 at 2 47 07 PM" src="https://github.com/user-attachments/assets/46509fd2-abad-46e5-85c7-9757fd1cea9c" />
 
 
@@ -54,7 +52,7 @@ plt.ylabel('y')
 plt.title('Generated Data for Linear Regression')
 plt.show()
 ```
-#### output 5
+#### output 2
 <img width="575" alt="Screenshot 2025-03-06 at 2 47 55 PM" src="https://github.com/user-attachments/assets/260e0b30-61d1-450a-b210-aeb2b3311c7c" />
 
 
@@ -80,7 +78,7 @@ model = Model(1, 1)
 print('Weight:', model.linear.weight.item())
 print('Bias:  ', model.linear.bias.item())
 ```
-#### output 7
+#### output 3
 <img width="292" alt="Screenshot 2025-03-06 at 2 48 21 PM" src="https://github.com/user-attachments/assets/791d9cd8-678f-481b-9060-29989ba741a7" />
 
 
@@ -112,7 +110,7 @@ for epoch in range(1, epochs + 1):  # Start from 1 to 50
           f'bias: {model.linear.bias.item():10.8f}')
 
 ```
-#### output 9
+#### output 4
 <img width="586" alt="Screenshot 2025-03-06 at 2 48 56 PM" src="https://github.com/user-attachments/assets/f4e3a372-a523-4933-b0e3-958b6f47cfc1" />
 
 
@@ -122,7 +120,7 @@ plt.ylabel('Loss')
 plt.xlabel('epoch');
 plt.show()
 ```
-#### output 10
+#### output 5
 <img width="219" alt="Screenshot 2025-02-27 at 2 16 29 PM" src="https://github.com/user-attachments/assets/160d6456-c3a0-4ae1-911a-f5192f1a0187" />
 
 
@@ -139,10 +137,6 @@ w1, b1 = model.linear.weight.item(), model.linear.bias.item()
 y1 = x1 * w1 + b1
 
 ```
-#### output 11
-<img width="234" alt="Screenshot 2025-02-27 at 2 16 44 PM" src="https://github.com/user-attachments/assets/e07b884c-910e-4437-920c-78b939ee4723" />
-
-
 
 
 ```
@@ -151,8 +145,9 @@ print(f'Final Weight: {w1:.8f}, Final Bias: {b1:.8f}')
 print(f'X range: {x1.numpy()}')
 print(f'Predicted Y values: {y1.numpy()}')
 ```
-#### output 13
-<img width="369" alt="Screenshot 2025-02-27 at 2 17 32 PM" src="https://github.com/user-attachments/assets/43ba2ddc-935c-4dba-8b2a-58c9714c4799" />
+#### output 7
+
+<img width="446" alt="Screenshot 2025-03-07 at 8 36 08 AM" src="https://github.com/user-attachments/assets/5776f767-ae1f-4e46-9d22-894c5612b563" />
 
 
 ```
@@ -165,14 +160,13 @@ plt.title('Trained Model: Best-Fit Line')
 plt.legend()
 plt.show()
 ```
-#### output 14
-<img width="338" alt="Screenshot 2025-02-27 at 2 18 07 PM" src="https://github.com/user-attachments/assets/eac40b69-b11b-4513-92d1-fd64503abe05" />
+#### output 8
+<img width="570" alt="Screenshot 2025-03-07 at 8 36 41 AM" src="https://github.com/user-attachments/assets/b7647a4e-7519-48d7-b87a-34d3af01d076" />
 
 
 
 
 
 ### Result 
-#### Successfully created and manipulated PyTorch tensors from NumPy arrays. Understood the difference between torch.tensor() and torch.from_numpy(). Learned how PyTorch tensors share memory with NumPy arrays when using from_numpy(). Demonstrated various ways to create tensors using PyTorch functions like empty(), zeros(), arange(), and linspace().
-
+#### The trained model successfully approximated the linear relationship with Final Weight ≈ 2.0 and Final Bias ≈ 1.0. The loss reduced over epochs, and the best-fit line closely followed the original data distribution, confirming successful training.
 
